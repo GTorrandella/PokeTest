@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, InputBase } from '@mui/material';
 import { Search } from '@mui/icons-material';
+import { Stack } from '@mui/system';
 
 export default function Header(handleClick) {
 
@@ -16,6 +17,10 @@ export default function Header(handleClick) {
 
   return (
     <header>
+      <Stack direction="row" justifyContent="center"
+          alignItems="center" spacing={2}
+          style={{backgroundColor : 'lightgrey'}}>
+      <div>Buscador de Pokémon</div>
       <InputBase
         onChange={handleChange}
         onKeyUp={handleEnter}
@@ -27,6 +32,7 @@ export default function Header(handleClick) {
         onEnter>
         <Search />
       </Button>
+      </Stack>
     </header>
   );
 }

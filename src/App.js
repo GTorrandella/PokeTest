@@ -13,7 +13,7 @@ function App() {
   const [pokemon, setPokemon] = useState(null);
   const [query, setQuery] = useState(null);
   const [page, setPage] = useState(1);
-  const pageSize = 8;
+  const pageSize = 9;
 
   function showSearch(){
     setShowSearch(true);
