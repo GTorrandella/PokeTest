@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import './App.css';
 import Pokemon from './Pokemon';
 import PokemonList from './PokemonList';
 import Header from './Header';
