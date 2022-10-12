@@ -1,8 +1,9 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 export default function Pokemon(props) {
-  const { pokemon } = props
+  const { pokemon, clickHandler } = props
 
   return(
       (pokemon !== null) ?
@@ -12,6 +13,9 @@ export default function Pokemon(props) {
         alt={pokemon.name}
         >
         </img>
+        <Button onClick={()=>clickHandler()}>
+          <ArrowBackIcon />
+        </Button>
       </Box> : 
       <Box />
   )

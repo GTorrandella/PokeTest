@@ -36,6 +36,10 @@ function App() {
     showSearch();
     resetPage();
   }
+  function backToSearch(){
+    setPokemon(null);
+    showSearch();
+  }
   
   return (
     <div className="App">
@@ -50,7 +54,9 @@ function App() {
         prevPage={prevPage}
         page={page}
         pageSize={pageSize}/>: 
-      <Pokemon pokemon={pokemon}/>
+      <Pokemon 
+        pokemon={pokemon} 
+        clickHandler={backToSearch}/>
       }
     </div>
   );

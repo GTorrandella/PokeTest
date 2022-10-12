@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Button, ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 const PokemonSpeciesList = require('./PokemonSpeciesList.json');
 
 export default function PokemonList(props) {
@@ -44,11 +46,11 @@ export default function PokemonList(props) {
       </ImageList>
       <Button disabled={page === 1}
       onClick={()=>{prevPage()}}>
-          MENOS
+          <NavigateBeforeIcon />
       </Button>
       <Button disabled={Math.ceil(pokemonToFetch.length/pageSize) <= page}
       onClick={()=>{nextPage()}}>
-          MAS
+          <NavigateNextIcon />
       </Button>
     </React.Fragment>
   );
