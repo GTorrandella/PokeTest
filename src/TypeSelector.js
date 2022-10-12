@@ -124,8 +124,8 @@ export default function TypeSelector(typeName) {
     default:
       return (
         <div>
-          <img src="types/Normal_icon_LA.png" alt={"Type " + typeName}></img>
-          <h3 style={{ textTransform: 'capitalize' }}>{typeName}</h3>
+          <img src="types/Normal_icon_LA.png" alt={"Type normal"}></img>
+          <h3 style={{ textTransform: 'capitalize' }}>{"normal"}</h3>
         </div>
       )
   }

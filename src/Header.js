@@ -28,8 +28,7 @@ export default function Header(handleClick) {
       />
       <Button 
         aria-label="search"
-        onClick={() => {handleClick(text)}}
-        onEnter>
+        onClick={() => {handleClick(text)}}>
         <Search />
       </Button>
       </Stack>
