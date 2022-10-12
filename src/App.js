@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Pokemon from './Pokemon';
 import PokemonList from './PokemonList';
@@ -12,25 +12,44 @@ function App() {
   const [showSearchState, setShowSearch] = useState(false);
   const [pokemon, setPokemon] = useState(null);
   const [query, setQuery] = useState(null);
+  const [page, setPage] = useState(1);
+  const pageSize = 8;
 
-  function manageQuery(text){
-    setQuery(text);
-  }
   function showSearch(){
     setShowSearch(true);
   }
   function showPokemon(pokemon){
-    setShowSearch(false)
-    setPokemon(pokemon)
+    setShowSearch(false);
+    setPokemon(pokemon);
   }
-
+  function resetPage(){
+    setPage(1);
+  }
+  function prevPage(){
+    setPage(page - 1);
+  }
+  function nextPage(){
+    setPage(page + 1);
+  }
+  function manageQuery(text){
+    setQuery(text);
+    showSearch();
+    resetPage();
+  }
   
   return (
     <div className="App">
-      {Header(manageQuery, showSearch)}
+      {Header(manageQuery)}
       {
       (showSearchState) ? 
-      <PokemonList pokedex={P} query={query} showPokemon={showPokemon}/>: 
+      <PokemonList 
+        pokedex={P}
+        query={query}
+        showPokemon={showPokemon}
+        nextPage={nextPage}
+        prevPage={prevPage}
+        page={page}
+        pageSize={pageSize}/>: 
       <Pokemon pokemon={pokemon}/>
       }
     </div>

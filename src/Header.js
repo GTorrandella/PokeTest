@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, InputBase } from '@mui/material';
 import { Search } from '@mui/icons-material';
 
-export default function Header(handleClick, showSearch) {
+export default function Header(handleClick) {
 
   const [text, setText] = React.useState(null);
   const handleChange = (event) => {
@@ -11,7 +11,6 @@ export default function Header(handleClick, showSearch) {
   const handleEnter = (event) => {
     if(event.key === 'Enter'){
       handleClick(text);
-      showSearch();
     }
   }
 
@@ -24,7 +23,7 @@ export default function Header(handleClick, showSearch) {
       />
       <Button 
         aria-label="search"
-        onClick={() => {handleClick(text);showSearch();}}
+        onClick={() => {handleClick(text)}}
         onEnter>
         <Search />
       </Button>
